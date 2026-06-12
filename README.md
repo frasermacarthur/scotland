@@ -26,6 +26,16 @@ npm run build
 npm run preview
 ```
 
+## Deploy to GitHub Pages
+
+A workflow is included at `.github/workflows/deploy.yml`. After pushing to GitHub:
+
+1. In the repo go to **Settings → Pages** and set **Source** to **GitHub Actions**
+2. Push to `main` (or run the workflow manually from the Actions tab)
+3. The site publishes to `https://<username>.github.io/<repo-name>/`
+
+The Vite config uses `base: "./"` (relative paths), so the build also works on Netlify, Vercel, or served from any subfolder. Note: opening `dist/index.html` directly from the file system will not work in most browsers — module scripts require a server; use `npm run preview` to test a build locally.
+
 ## Stack
 
 React 18 + Vite + Recharts. Single component in `src/App.jsx`; no backend, no state persistence — all scenario state lives in memory.
