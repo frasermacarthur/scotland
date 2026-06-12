@@ -26,7 +26,17 @@ npm run build
 npm run preview
 ```
 
-## Deploy to GitHub Pages
+## Deploy to GitHub Pages — easiest path (no build needed)
+
+This repo includes a pre-built copy of the app in `docs/`. To deploy:
+
+1. Push the repo to GitHub
+2. Go to **Settings → Pages**, set **Source** to **Deploy from a branch**, choose **main** and the **/docs** folder, save
+3. The site appears at `https://<username>.github.io/<repo-name>/` within a minute or two
+
+Important: GitHub Pages serves static files only — it cannot build the app. Pointing Pages at the repo root serves the raw source `index.html`, whose `/src/main.jsx` module cannot run in a browser, giving a blank page with no 404s. Always point Pages at `docs/` (or use the Actions workflow below). If you change `src/App.jsx`, refresh the built copy with `npm run build && rm -rf docs && cp -r dist docs` and commit.
+
+## Deploy via GitHub Actions (auto-build on push)
 
 A workflow is included at `.github/workflows/deploy.yml`. After pushing to GitHub:
 
