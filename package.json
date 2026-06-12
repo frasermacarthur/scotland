@@ -1,0 +1,21 @@
+{
+  "name": "scotland-gas-demand-explorer",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Interactive scenario explorer for Scotland gas distribution network demand, 2025-2050, with NESO FES 2025 pathway presets",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "recharts": "^2.12.7"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.1",
+    "vite": "^5.4.0"
+  }
+}
